@@ -1,0 +1,24 @@
+<ng-include src="'views/header.html'"></ng-include>
+
+<ad-display src="'images/doge-600.png'"></ad-display>
+
+
+
+    <div class="container-fluid quotes-container news-box col-lg-10">
+        <h2>News</h2>
+
+        <div class="quote-block" ng-repeat="n in news">
+            <a href="/#/news/{{n._id.$oid}}"><h4>{{ n.date | date}}</h4></a> par {{n.author}}
+            {{ n.news_long}} <br>
+
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+        <br>
+        <br>
+
+</div>
+
+<ng-include src="'views/footer.html'"></ng-include>

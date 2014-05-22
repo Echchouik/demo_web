@@ -1,0 +1,68 @@
+<ng-include src="'views/header.html'"></ng-include>
+
+<div class="search hidden-md hidden-lg" ng-show="myToggle">
+    <label>Rechercher: </label> <input type="text" ng-model="search">
+
+</div>
+<div class="search visible-lg visible-md">
+    <label>Rechercher: </label> <input type="text" ng-model="search">
+
+</div>
+
+
+<ad-display src="'images/doge-600.png'"></ad-display>
+
+
+<div class="container-fluid quotes-container col-sm-7 col-md-7">
+    <div class="quote-block" ng-repeat="quote in quotes | filter: search">
+       <quote-display quote="quote"></quote-display>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+<div class="container-fluid quotes-container col-sm-5 col-md-4 col-lg-3">
+    <h2> Participer</h2>
+
+    <form class="form-horizontal">
+        <span ng-show="success">Votre citation a bien été envoyée</span>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Nom: </label>
+
+            <div class="col-sm-10"><input class="form-control" type="text" ng-model="newQuote.author"></div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Citation: </label>
+
+            <div class="col-sm-10">
+                <textarea class="form-control" ng-model="newQuote.quote"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" ng-click="postQuote()">Envoyer</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="news-box visible-lg visible-md">
+        <h2>News</h2>
+
+        <div class="quote-block" ng-repeat="n in news">
+            <a href="/#/news/{{n._id.$oid}}"><h4>{{ n.date | date}}</h4></a>
+            {{ n.news_short}} <br>
+            <small class="pull-right">{{n.author}}</small>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<ng-include src="'views/footer.html'"></ng-include>

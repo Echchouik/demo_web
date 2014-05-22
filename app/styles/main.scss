@@ -1,0 +1,74 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+@import "mixins.scss";
+@import "colors.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  background: $background;
+
+}
+
+header {
+  background: $main-color;
+  margin: 0;
+  padding: 0 0 3% 0;
+  text-align: center;
+  h1 {
+    color: #b4f000;
+    margin: 0;
+  }
+  h5 {
+    color: $light-grey;
+  }
+  p {
+    color: $light-grey;
+  }
+
+}
+
+footer {
+  padding: 3%;
+  background: $main-color;
+  float: bottom;
+  color: $light-grey;
+
+}
+
+.search {
+  margin-top: 2%;
+  text-align: center;
+  color: $main-color;
+
+}
+
+.ad-container {
+  margin-top:5%;
+  padding-left:2%;
+  .ad {
+    padding: 2%;
+  }
+}
+
+.quotes-container {
+  margin-top:5%;
+  .quote-block {
+    background: $quote-background;
+    border: 1px solid $main-color;
+    padding:0 2% 2% 2%;
+    @include border-radius(10px);
+    margin-bottom: 2%;
+    .date {
+      float:right;
+    }
+
+  }
+}
